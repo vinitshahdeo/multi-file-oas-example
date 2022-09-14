@@ -1,0 +1,66 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Edited from Postman V10",
+    "version" : "2022-05-16 06:06:04UTC"
+  },
+  "servers" : [ {
+    "url" : "https://0eys9a9l7j.execute-api.us-east-1.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : "prod"
+      }
+    }
+  } ],
+  "paths" : {
+    "/user" : {
+      "get" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for GET /user"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "1.0",
+          "type" : "http_proxy",
+          "httpMethod" : "ANY",
+          "uri" : "https://postman.com",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/profile" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /profile"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:780401591112:function:testlambda/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/aws-user" : {
+      "put" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for PUT /aws-user"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "1.0",
+          "type" : "http_proxy",
+          "httpMethod" : "POST",
+          "uri" : "https://google.com",
+          "connectionType" : "INTERNET"
+        }
+      }
+    }
+  },
+  "x-amazon-apigateway-importexport-version" : "1.0"
+}
